@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mission Gallery | Josef Johnsen</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body class="gallery-page">
+        <div class="site-header">
+            <div class="site-header-inner">
+                <div class="site-brand">
+                    <div class="brand-kicker">Josef Johnsen</div>
+                    <div class="brand-name">Mission Gallery</div>
+                </div>
+                <div class="site-nav">
+                    <a class="nav-link" href="../index.html">Resume</a>
+                    <a class="nav-link" href="about.html">About Me</a>
+                    <a class="nav-link is-active" href="gallery.html">Mission Gallery</a>
+                    <a class="nav-link" href="../scratch.html">scratch</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="page">
+                <div class="hero">
+                    <span class="eyebrow">Mission Gallery</span>
+                    <h1>Cote d'Ivoire, one area at a time.</h1>
+                    <p class="lede">
+                        The original mission-area recap is still here, and now there is also a second photo carousel underneath it using your actual mission pictures.
+                        That lower gallery randomly selects local photos each time and can rotate automatically.
+                    </p>
+                    <div class="hero-links">
+                        <a class="hero-link" href="../index.html">Resume Page</a>
+                        <a class="hero-link" href="about.html">About Me Page</a>
+                        <a class="hero-link" href="#gallery">Jump to carousel</a>
+                    </div>
+                </div>
+
+                <div class="carousel-shell" id="gallery">
+                    <div class="carousel-header">
+                        <div>
+                            <span class="eyebrow">Mission Recap</span>
+                            <h2 class="carousel-title">Mission stops from your resume</h2>
+                        </div>
+                        <p>Use the arrows, dots, thumbnails, or your keyboard left and right arrows to move through the gallery.</p>
+                    </div>
+
+                    <div class="carousel-viewport" aria-live="polite">
+                        <div class="slides" id="areaSlides"></div>
+                    </div>
+
+                    <div class="controls">
+                        <div class="button-row">
+                            <button class="nav-button" id="areaPrevButton" aria-label="Previous slide">&#8592;</button>
+                            <button class="nav-button" id="areaNextButton" aria-label="Next slide">&#8594;</button>
+                        </div>
+                        <div class="dot-row" id="areaDotRow" aria-label="Slide navigation"></div>
+                    </div>
+
+                    <div class="thumbnail-grid" id="areaThumbnailGrid"></div>
+
+                    <p class="footer-note">
+                        This top carousel keeps the original mission recap by area.
+                    </p>
+                </div>
+
+                <div class="carousel-shell reel-shell">
+                    <div class="carousel-viewport reel-viewport" aria-live="polite">
+                        <div class="slides" id="memorySlides"></div>
+                    </div>
+                </div>
+
+                <div class="carousel-shell">
+                    <div class="carousel-header">
+                        <div>
+                            <span class="eyebrow">Video Feature</span>
+                            <h2 class="carousel-title">A look at Cote d'Ivoire</h2>
+                        </div>
+                        <p>This video adds a little more place and atmosphere to the gallery page.</p>
+                    </div>
+
+                    <div class="video-frame">
+                        <iframe
+                            src="https://www.youtube.com/embed/23ubg7QdebI?si=tmG_KdYVaBy4KKWv"
+                            title="Cote d'Ivoire video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+
+                    <p class="footer-note">
+                        Embedded from YouTube as part of the mission gallery.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer">
+            <div class="site-footer-inner">
+                <div>Josef Johnsen personal site</div>
+                <div>Resume, simple bio, and mission gallery</div>
+            </div>
+        </div>
+
+        <script src="mission-photo-manifest.js"></script>
+        <script>
+            const areaRecapSlides = [
+                {
+                    src: "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20de%20Logoual%C3%A9%20%2C%20Cote%20d%27Ivoire.jpg",
+                    title: "Logouale",
+                    subtitle: "Logouale, Cote d'Ivoire",
+                    tag: "West of Cote d'Ivoire",
+                    description: "This slide uses a public photo of Stade Janette Badouelle in Logouale. It gives the gallery a real place-based opening instead of a generic stock image.",
+                    source: "Wikimedia Commons, Stade de Logouale, Cote d'Ivoire"
+                },
+                {
+                    src: "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Yamoussoukro.jpg",
+                    title: "Yamoussoukro",
+                    subtitle: "Yamoussoukro, Cote d'Ivoire",
+                    tag: "Capital City",
+                    description: "A street scene in Yamoussoukro keeps this slide grounded in everyday city life, which feels more personal than only showing the famous basilica.",
+                    source: "Wikimedia Commons, Rue Yamoussoukro"
+                },
+                {
+                    src: "https://commons.wikimedia.org/wiki/Special:FilePath/Entr%C3%A9eMahapleu.jpg",
+                    title: "Mahapleu",
+                    subtitle: "Mahapleu, Cote d'Ivoire",
+                    tag: "Western Borderlands",
+                    description: "Mahapleu had a reusable public image available online, so this slide uses the town entrance sign. It is simple, but it is unmistakably tied to the exact area.",
+                    source: "Wikimedia Commons, Entree Mahapleu"
+                },
+                {
+                    src: "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%B4te%20d%27Ivoire%20-%20Haut-Sassandra.svg",
+                    title: "Gadouan",
+                    subtitle: "Gadouan, Haut-Sassandra, Cote d'Ivoire",
+                    tag: "Representative Map",
+                    description: "I could not find a strong reusable town photo for Gadouan from a reliable public source, so this slide uses a Haut-Sassandra region locator image as an honest stand-in for that area.",
+                    source: "Wikimedia Commons, Haut-Sassandra region map"
+                },
+                {
+                    src: "https://commons.wikimedia.org/wiki/Special:FilePath/Cathgagnoa.jpg",
+                    title: "Gagnoa",
+                    subtitle: "Gagnoa, Cote d'Ivoire",
+                    tag: "South-Central Stop",
+                    description: "This public photo of Cathedrale Sainte-Anne gives Gagnoa a distinct landmark slide and keeps the visual rhythm of the gallery varied.",
+                    source: "Wikimedia Commons, Cathgagnoa"
+                },
+                {
+                    src: "https://commons.wikimedia.org/wiki/Special:FilePath/Du%C3%A9kou%C3%A9.jpg",
+                    title: "Duekoue",
+                    subtitle: "Duekoue, Cote d'Ivoire",
+                    tag: "Western Cote d'Ivoire",
+                    description: "The closing slide uses a wide photo taken in Duekoue, which works nicely as a last-frame overview before the carousel loops back to the beginning.",
+                    source: "Wikimedia Commons, Duekoue"
+                }
+            ];
+
+            function shuffle(array) {
+                const copy = [...array];
+                for (let i = copy.length - 1; i > 0; i -= 1) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [copy[i], copy[j]] = [copy[j], copy[i]];
+                }
+                return copy;
+            }
+
+            function selectDistributedPhotos(pool, count) {
+                const sampleCount = Math.min(count, pool.length);
+                if (sampleCount === 0) {
+                    return [];
+                }
+
+                const bucketSize = pool.length / sampleCount;
+                const selected = [];
+
+                for (let i = 0; i < sampleCount; i += 1) {
+                    const start = Math.floor(i * bucketSize);
+                    const end = Math.max(start + 1, Math.floor((i + 1) * bucketSize));
+                    const bucket = pool.slice(start, Math.min(end, pool.length));
+                    const randomIndex = Math.floor(Math.random() * bucket.length);
+                    selected.push(bucket[randomIndex]);
+                }
+
+                return shuffle(selected).map((src, index) => ({
+                    src,
+                    title: `Mission photo ${index + 1}`,
+                    subtitle: "",
+                    tag: "",
+                    source: src.replaceAll("%20", " ")
+                }));
+            }
+
+            function createCarousel(config) {
+                const slides = document.getElementById(config.slidesId);
+                const dotRow = config.dotRowId ? document.getElementById(config.dotRowId) : null;
+                const thumbnailGrid = config.thumbnailGridId ? document.getElementById(config.thumbnailGridId) : null;
+                const prevButton = config.prevButtonId ? document.getElementById(config.prevButtonId) : null;
+                const nextButton = config.nextButtonId ? document.getElementById(config.nextButtonId) : null;
+                const slideCount = config.photos.length;
+                let currentIndex = 0;
+                let autoplayId = null;
+
+                config.photos.forEach((photo, index) => {
+                    const slide = document.createElement("div");
+                    slide.className = config.imageOnly ? "slide reel-slide" : "slide";
+                    slide.innerHTML = config.imageOnly ? `
+                        <div class="slide-media reel-media">
+                            <img src="${photo.src}" alt="${photo.title}">
+                        </div>
+                    ` : `
+                        <div class="slide-media">
+                            <img src="${photo.src}" alt="${photo.title}">
+                            <span class="slide-tag">${photo.tag}</span>
+                        </div>
+                        <div class="slide-copy">
+                            <div>
+                                <div class="slide-count">${String(index + 1).padStart(2, "0")} / ${String(slideCount).padStart(2, "0")}</div>
+                                <h2>${photo.title}</h2>
+                                <p class="location-line">${photo.subtitle}</p>
+                                ${config.showDescriptions === false ? "" : `<p class="description">${photo.description}</p>`}
+                            </div>
+                            ${config.showSource === false ? "" : `
+                                <div class="detail-box">
+                                    <strong>Image Source</strong>
+                                    <p>${photo.source}</p>
+                                </div>
+                            `}
+                        </div>
+                    `;
+                    slides.appendChild(slide);
+
+                    if (config.imageOnly) {
+                        return;
+                    }
+
+                    const thumb = document.createElement("button");
+                    thumb.type = "button";
+                    thumb.className = `thumb${index === 0 ? " active" : ""}`;
+                    thumb.dataset.index = String(index);
+                    thumb.innerHTML = `
+                        <img src="${photo.src}" alt="${photo.title} thumbnail">
+                        <span>${photo.title}</span>
+                    `;
+                    thumb.addEventListener("click", () => goToSlide(index, true));
+                    thumbnailGrid.appendChild(thumb);
+
+                    const dot = document.createElement("button");
+                    dot.type = "button";
+                    dot.className = "dot";
+                    dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+                    dot.addEventListener("click", () => goToSlide(index, true));
+                    dotRow.appendChild(dot);
+                });
+
+                function updateUI() {
+                    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                    if (dotRow) {
+                        Array.from(dotRow.children).forEach((dot, index) => {
+                            dot.setAttribute("aria-current", index === currentIndex ? "true" : "false");
+                        });
+                    }
+
+                    if (thumbnailGrid) {
+                        Array.from(thumbnailGrid.children).forEach((thumb, index) => {
+                            thumb.classList.toggle("active", index === currentIndex);
+                            thumb.setAttribute("aria-current", index === currentIndex ? "true" : "false");
+                        });
+                    }
+                }
+
+                function restartAutoplay() {
+                    if (!config.autoplayMs) {
+                        return;
+                    }
+
+                    if (autoplayId) {
+                        clearInterval(autoplayId);
+                    }
+
+                    autoplayId = setInterval(() => {
+                        goToSlide(currentIndex + 1, false);
+                    }, config.autoplayMs);
+                }
+
+                function goToSlide(index, restartTimer) {
+                    currentIndex = (index + slideCount) % slideCount;
+                    updateUI();
+                    if (restartTimer) {
+                        restartAutoplay();
+                    }
+                }
+
+                if (prevButton && nextButton) {
+                    prevButton.addEventListener("click", () => goToSlide(currentIndex - 1, true));
+                    nextButton.addEventListener("click", () => goToSlide(currentIndex + 1, true));
+                }
+
+                if (config.enableKeyboard) {
+                    document.addEventListener("keydown", (event) => {
+                        if (event.key === "ArrowLeft") {
+                            goToSlide(currentIndex - 1, true);
+                        }
+
+                        if (event.key === "ArrowRight") {
+                            goToSlide(currentIndex + 1, true);
+                        }
+                    });
+                }
+
+                if (!config.disableUserInteractionPause) {
+                    slides.addEventListener("mouseenter", () => {
+                        if (autoplayId) {
+                            clearInterval(autoplayId);
+                        }
+                    });
+
+                    slides.addEventListener("mouseleave", restartAutoplay);
+                }
+
+                updateUI();
+                restartAutoplay();
+            }
+
+            createCarousel({
+                photos: areaRecapSlides,
+                slidesId: "areaSlides",
+                dotRowId: "areaDotRow",
+                thumbnailGridId: "areaThumbnailGrid",
+                prevButtonId: "areaPrevButton",
+                nextButtonId: "areaNextButton",
+                enableKeyboard: true
+            });
+
+            createCarousel({
+                photos: selectDistributedPhotos(missionPhotoPool, 30),
+                slidesId: "memorySlides",
+                autoplayMs: 4000,
+                showDescriptions: false,
+                showSource: false,
+                imageOnly: true,
+                disableUserInteractionPause: true
+            });
+        </script>
+    </body>
+</html>
